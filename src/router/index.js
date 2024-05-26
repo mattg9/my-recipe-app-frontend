@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
-import AddRecipe from '@/views/AddRecipe.vue'; // Assuming AddRecipe is a .vue file, not .js
+import AddRecipe from '@/views/AddRecipe.vue';
 
 const routes = [
   {
