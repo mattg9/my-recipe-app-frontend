@@ -1,7 +1,5 @@
 import { createApp } from "vue";
-import AddRecipe from './views/AddRecipe.vue';
+import Home from './views/Home.vue';
 import router from './router';
 
-createApp({ router, render: h => h(AddRecipe) })
-  .use(router)
-  .$mount('#app');
+createApp(Home).use(router).mount('#app');
