@@ -1,3 +1,3 @@
-<template src="./App.html"></template>
-<script src="./App.js"></script>
-<style src="./App.css"></style>
+<template src="./views/AddRecipe/AddRecipe.html"></template>
+<script src="./views/AddRecipe/AddRecipe.js"></script>
+<style src="./views/AddRecipe/AddRecipe.css"></style>
