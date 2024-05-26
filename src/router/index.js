@@ -1,21 +1,23 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
-import AddRecipe from '@/views/AddRecipe/AddRecipe.js';
+import AddRecipe from '@/views/AddRecipe.vue'; // Assuming AddRecipe is a .vue file, not .js
 
-Vue.use(Router);
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/add',
+    name: 'AddRecipe',
+    component: AddRecipe
+  }
+];
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/add',
-      name: 'AddRecipe',
-      component: AddRecipe
-    }
-  ]
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
+
+export default router;

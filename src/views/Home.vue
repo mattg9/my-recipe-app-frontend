@@ -11,7 +11,7 @@
   import { getRecipes } from '@/services/recipeService';
   
   export default {
-    name: 'Home',
+    name: 'RecipeHomePage',
     data() {
       return {
         recipes: []

@@ -1,10 +1,7 @@
-import Vue from 'vue';
-import App from './views/AddRecipe.vue';
+import { createApp } from "vue";
+import AddRecipe from './views/AddRecipe.vue';
 import router from './router';
 
-Vue.config.productionTip = false;
-
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app');
+createApp({ router, render: h => h(AddRecipe) })
+  .use(router)
+  .$mount('#app');
