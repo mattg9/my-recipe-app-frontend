@@ -9,7 +9,9 @@
     </div>
     <div class="mb-3">
       <h4>Instructions:</h4>
-      <p>{{ recipe.instructions }}</p>
+      <ol>
+        <li v-for="(instruction, index) in recipe.instructions" :key="index">{{ instruction }}</li>
+      </ol>
     </div>
   </div>
 </template>

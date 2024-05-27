@@ -21,13 +21,22 @@ export default {
   name: 'RecipeHomePage',
   methods: {
     viewRecipe(recipe) {
-      this.$store.commit('setSelectedRecipe', recipe);
+      const preparedRecipe = {
+        ...recipe,
+        ingredients: recipe.ingredients.split(/\r?\n/),
+        instructions: recipe.instructions.split(/\r?\n/)
+      };
+      this.$store.commit('setSelectedRecipe', preparedRecipe);
       this.$router.push({ name: 'Recipe' });
     }
   },
   data() {
     return {
-      recipes: []
+      recipes: [{
+        'title':'Crispy Tofu',
+        'ingredients': 'tofu',
+        'instructions': 'make it crispy'
+      }]
     };
   },
   async created() {
