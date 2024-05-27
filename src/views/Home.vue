@@ -32,11 +32,7 @@ export default {
   },
   data() {
     return {
-      recipes: [{
-        'title':'Crispy Tofu',
-        'ingredients': 'tofu',
-        'instructions': 'make it crispy'
-      }]
+      recipes: []
     };
   },
   async created() {
