@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h2>Home</h2>
-    <!-- Add button -->
-    <router-link to="/add">
-      <button>Add Recipe</button>
-    </router-link>
+    <h2>My Recipes</h2>
     <ul>
       <li v-for="recipe in recipes" :key="recipe.id">{{ recipe.title }}</li>
     </ul>
