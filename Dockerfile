@@ -1,6 +1,9 @@
-FROM python:3.11.7
+FROM node:14 as build-stage
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+COPY package*.json ./
+RUN npm install
 COPY . .
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "recipe_app.wsgi:application"]
+RUN npm run build
+
+FROM nginx:stable-alpine
+COPY --from=build-stage /app/dist /usr/share/nginx/html
