@@ -19,7 +19,7 @@ export default {
   name: 'RecipePage',
   computed: {
     selectedRecipe() {
-      return this.$store.state.selectedRecipe;
+      return this.$store.state.selectedRecipe || {};
     }
   }
 };

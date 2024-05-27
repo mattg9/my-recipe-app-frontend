@@ -19,9 +19,10 @@ import { getRecipes } from '@/services/recipeService';
 
 export default {
   name: 'RecipeHomePage',
-  method: {
+  methods: {
     viewRecipe(recipe) {
       this.$store.commit('setSelectedRecipe', recipe);
+      this.$router.push({ name: 'Recipe' });
     }
   },
   data() {
