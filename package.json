@@ -13,7 +13,8 @@
     "install": "^0.13.0",
     "npm": "^10.8.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
