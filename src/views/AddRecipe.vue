@@ -1,20 +1,20 @@
 <template>
-  <div>
+  <div class="container mt-5">
     <h2>Add Recipe</h2>
-    <form @submit.prevent="submitRecipe">
-      <div>
-        <label for="title">Title:</label>
-        <input v-model="title" id="title" required>
+    <form @submit.prevent="submitRecipe" class="mt-3">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" v-model="title" id="title" class="form-control" required>
       </div>
-      <div>
-        <label for="ingredients">Ingredients:</label>
-        <textarea v-model="ingredients" id="ingredients" required></textarea>
+      <div class="mb-3">
+        <label for="ingredients" class="form-label">Ingredients:</label>
+        <textarea v-model="ingredients" id="ingredients" class="form-control" rows="5" required></textarea>
       </div>
-      <div>
-        <label for="instructions">Instructions:</label>
-        <textarea v-model="instructions" id="instructions" required></textarea>
+      <div class="mb-3">
+        <label for="instructions" class="form-label">Instructions:</label>
+        <textarea v-model="instructions" id="instructions" class="form-control" rows="5" required></textarea>
       </div>
-      <button type="submit">Add Recipe</button>
+      <button type="submit" class="btn btn-primary">Add Recipe</button>
     </form>
   </div>
 </template>
