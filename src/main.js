@@ -1,9 +1,8 @@
 import { createApp } from "vue";
 import Home from './App.vue';
 import router from './router';
-import vuetify from './plugins/vuetify';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 createApp(Home)
   .use(router)
-  .use(vuetify)
   .mount('#app');

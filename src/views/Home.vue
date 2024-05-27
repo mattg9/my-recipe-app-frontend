@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <h2>My Recipes</h2>
-    <ul>
-      <li v-for="recipe in recipes" :key="recipe.id">{{ recipe.title }}</li>
+  <div class="container">
+    <h2 class="mt-5">My Recipes</h2>
+    <ul class="list-group mt-3">
+      <li
+        v-for="recipe in recipes"
+        :key="recipe.id"
+        class="list-group-item"
+      >
+        {{ recipe.title }}
+      </li>
     </ul>
   </div>
 </template>
