@@ -38,8 +38,12 @@ export default {
         ingredients: this.ingredients,
         instructions: this.instructions
       };
-      await addRecipe(recipe);
-      this.$router.push('/');
+      try {
+        await addRecipe(recipe);
+        this.$router.push('/');
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 };

@@ -31,8 +31,13 @@ export default {
     };
   },
   async created() {
-    const response = await getRecipes();
-    this.recipes = response.data;
+    try {
+      const response = await getRecipes();
+      this.recipes = response.data;
+    } catch (error) {
+      this.error = 'Failed to load recipes. Please try again later.';
+      console.error(error);
+    }
   }
 };
 </script>

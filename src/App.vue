@@ -18,3 +18,11 @@
     <router-view></router-view>
   </div>
 </template>
+
+<style>
+/* Ensure that navbar items stay in view on smaller screens */
+.navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+</style>
