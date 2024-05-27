@@ -18,8 +18,8 @@
 export default {
   name: 'RecipePage',
   computed: {
-    selectedRecipe() {
-      return this.$store.state.selectedRecipe || {};
+    recipe() {
+      return this.$store.state.selectedRecipe;
     }
   }
 };
