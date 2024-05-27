@@ -7,5 +7,6 @@ export const getRecipes = async () => {
 };
 
 export const addRecipe = async (recipe) => {
+  console.log(recipe);
   return await axios.post(API_URL, recipe);
 };

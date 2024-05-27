@@ -35,7 +35,7 @@ export default {
     async submitRecipe() {
       const recipe = {
         title: this.title,
-        ingredients: this.ingredients.split('\n'),
+        ingredients: this.ingredients,
         instructions: this.instructions
       };
       await addRecipe(recipe);
