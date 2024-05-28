@@ -10,3 +10,13 @@ export const addRecipe = async (recipe) => {
   console.log(recipe);
   return await axios.post(API_URL, recipe);
 };
+
+export const searchRecipe = async (query) => {
+  try {
+    const response = await axios.get(`${API_URL}/search/?query=${query}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error searching recipes:', error);
+    throw error;
+  }
+};
