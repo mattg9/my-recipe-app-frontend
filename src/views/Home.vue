@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <h2 class="mt-5">My Recipes</h2>
+    <div v-if="loading" class="text-center mt-3">
+      <i class="fa fa-spinner fa-spin fa-3x"></i>
+      <p>Loading...</p>
+    </div>
     <ul class="list-group mt-3">
       <li v-for="recipe in recipes" 
         :key="recipe.id" 
@@ -32,7 +36,8 @@ export default {
   },
   data() {
     return {
-      recipes: []
+      recipes: [],
+      loading: true
     };
   },
   async created() {
@@ -42,6 +47,8 @@ export default {
     } catch (error) {
       this.error = 'Failed to load recipes. Please try again later.';
       console.error(error);
+    } finally {
+      this.loading = false;
     }
   }
 };

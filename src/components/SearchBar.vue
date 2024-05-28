@@ -1,7 +1,7 @@
 <template>
-  <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchQuery">
-    <button class="btn btn-outline-success" type="button" @click="search">Search</button>
+  <form class="d-flex" @submit.prevent="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchQuery" @keyup.enter="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </template>
 
@@ -11,11 +11,13 @@ import { searchRecipe } from '@/services/recipeService';
 export default {
   data() {
     return {
-      query: '',
-      searchResults: []
+      searchQuery: '',
     };
   },
   methods: {
+    search() {
+      console.log(searchRecipe(this.searchQuery));
+    }
   }
 }
 </script>
