@@ -43,7 +43,7 @@ export default {
   async created() {
     try {
       const response = await getRecipes();
-      this.recipes = response.data;
+      this.recipes = response.data.results;
     } catch (error) {
       this.error = 'Failed to load recipes. Please try again later.';
       console.error(error);
