@@ -1,9 +1,23 @@
-FROM node:14 as build-stage
+# Use an official Node runtime as a parent image
+FROM node:16-slim
+
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy package.json and package-lock.json
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
+
+# Copy the rest of the application
 COPY . .
+
+# Build the app
 RUN npm run build
 
-FROM nginx:stable-alpine
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Expose port 80 for the app
+EXPOSE 80
+
+# Serve the app
+CMD ["npm", "run", "serve"]
