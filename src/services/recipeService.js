@@ -20,3 +20,13 @@ export const searchRecipe = async (query) => {
     throw error;
   }
 };
+
+export const deleteRecipe = async (recipeId) => {
+  try {
+    const response = await axios.delete(`${API_URL}${recipeId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting recipe:', error);
+    throw error;
+  }
+};

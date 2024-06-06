@@ -13,16 +13,29 @@
         <li v-for="(instruction, index) in recipe.instructions" :key="index">{{ instruction }}</li>
       </ol>
     </div>
+    <!-- <button @click="deleteRecipe" class="btn btn-danger">Delete Recipe</button> -->
   </div>
 </template>
 
 <script>
+import { deleteRecipe } from '@/services/recipeService';
+import { router } from '@/router/index';
 export default {
   name: 'RecipePage',
   computed: {
     recipe() {
       return this.$store.state.selectedRecipe;
     }
-  }
+  },
+  // methods: {
+  //   async deleteRecipe() {
+  //     try {
+  //       await deleteRecipe(this.recipe.id);
+  //       router.push('/')
+  //     } catch (error) {
+  //       console.error('Error deleting recipe:', error);
+  //     }
+  //   }
+  // }
 };
 </script>
