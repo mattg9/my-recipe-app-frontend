@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/recipes';
+const API_URL = 'http://localhost:8000/api/recipes/';
 
 export const getRecipes = async () => {
   return await axios.get(API_URL);
@@ -21,9 +21,9 @@ export const searchRecipe = async (query) => {
   }
 };
 
-export const deleteRecipe = async (recipeId) => {
+export const deleteRecipe = async (id) => {
   try {
-    const response = await axios.delete(`${API_URL}/${recipeId}`);
+    const response = await axios.delete(`${API_URL}${id}`);
     return response.data;
   } catch (error) {
     console.error('Error deleting recipe:', error);
