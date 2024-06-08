@@ -23,7 +23,7 @@ export const searchRecipe = async (query) => {
 
 export const deleteRecipe = async (id) => {
   try {
-    const response = await axios.delete(`${API_URL}${id}`);
+    const response = await axios.delete(`${API_URL}${id}/`);
     return response.data;
   } catch (error) {
     console.error('Error deleting recipe:', error);
